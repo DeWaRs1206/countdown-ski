@@ -8,24 +8,40 @@
         body {
             font-family: Arial, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
+            padding: 10px; /* Add padding for smaller screens */
+            box-sizing: border-box;
         }
         #countdown {
-            font-size: 2em;
+            font-size: 1.5em; /* Reduce font size for better readability on small screens */
             background: #fff;
-            padding: 20px;
+            padding: 15px; /* Adjust padding */
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center; /* Center text */
+            width: 100%; /* Make the countdown box full width on small screens */
+            max-width: 400px; /* Limit the max width on larger screens */
+        }
+        #image {
+            text-align: center;
+            width: 100%;
+            max-width: 400px; /* Limit the max width of the image */
+        }
+        #image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
     </style>
 </head>
 <body>
     <div id="countdown"></div>
-
     <div id="image">
         <img src="IMG_6556.jpeg" alt="Image Description">
     </div>
