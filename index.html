@@ -8,31 +8,62 @@
         body {
             font-family: Arial, sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
+            padding: 10px; /* Add padding for smaller screens */
+            box-sizing: border-box;
         }
         #countdown {
-            font-size: 2em;
+            font-size: 1.5em; /* Reduce font size for better readability on small screens */
             background: #fff;
-            padding: 20px;
+            padding: 15px; /* Adjust padding */
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center; /* Center text */
+            width: 100%; /* Make the countdown box full width on small screens */
+            max-width: 400px; /* Limit the max width on larger screens */
+        }
+        #image {
+            text-align: center;
+            width: 100%;
+            max-width: 400px; /* Limit the max width of the image */
+            margin-bottom: 20px; /* Add margin for space between elements */
+        }
+        #image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        #widget {
+            width: 100%;
+            max-width: 400px; /* Limit the max width of the widget */
+            text-align: center;
+            margin-top: 20px; /* Add margin for space between elements */
         }
     </style>
 </head>
 <body>
-    <div id="countdown"></div>
 
     <div id="image">
         <img src="ski2.png" alt="Image Description">
     </div>
+    <div id="countdown"></div>
+    <div id="widget">
+        <script src="https://fr.windfinder.com/widget/forecast/js/ischgl_tyrol_austria?unit_wave=m&unit_rain=mm&unit_temperature=c&unit_wind=kts&unit_pressure=hPa&days=2&show_day=1&show_waves=0"></script>
+        <noscript>
+            <a rel="nofollow" href="https://www.windfinder.com/forecast/ischgl_tyrol_austria?utm_source=forecast&utm_medium=web&utm_campaign=homepageweather&utm_content=noscript-forecast">Wind forecast for Ischgl</a> provided by 
+            <a rel="nofollow" href="https://www.windfinder.com?utm_source=forecast&utm_medium=web&utm_campaign=homepageweather&utm_content=noscript-logo">windfinder.com</a>
+        </noscript>
+    </div>
 
     <script>
         function updateCountdown() {
-            const targetDate = new Date("February 1, 2025 00:00:00").getTime();
+            const targetDate = new Date("January 3, 2025 00:00:00").getTime();
             const now = new Date().getTime();
             const timeLeft = targetDate - now;
 
@@ -54,4 +85,3 @@
     </script>
 </body>
 </html>
-
